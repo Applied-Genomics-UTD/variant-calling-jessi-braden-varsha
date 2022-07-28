@@ -1,0 +1,5 @@
+*.fq
+*.ipynb
+/refs
+*bam*
+*fa*

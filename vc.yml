@@ -1,0 +1,15 @@
+name: vc
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=2_gnu
+  - dwgsim=1.1.13=h20b1175_1
+  - libgcc-ng=12.1.0=h8d9b700_16
+  - libgomp=12.1.0=h8d9b700_16
+  - libzlib=1.2.12=h166bdaf_2
+  - ncurses=6.3=h27087fc_1
+  - zlib=1.2.12=h166bdaf_2
+prefix: /home/bms200003/.conda/envs/vc
