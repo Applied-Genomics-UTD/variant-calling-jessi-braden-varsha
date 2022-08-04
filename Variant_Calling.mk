@@ -1,4 +1,4 @@
-All: Data Align Bcf Freebayes Multi
+All: Data Align Bcf Freebayes Multi Normalize
 
 ACC=AF086833
 SRR=SRR1553500
@@ -65,4 +65,10 @@ Multi:
 	bwa mem -R ${TAG3} ${REF} ${R7} ${R8} | samtools sort > ${BAM3}
 	bwa mem -R ${TAG4} ${REF} ${R9} ${R10} | samtools sort > ${BAM4}
 ## Produce multisample vcf
-	conda run -n biostars bcftools mpileup -Ov -f ${REF} *bam | conda run -n biostars bcftools call --ploidy 1 -vm -Ov >  variants.vcf
+	conda run -n biostars bcftools mpileup -Ov -f ${REF} *.bam | conda run -n biostars bcftools call --ploidy 1 -vm -Ov >  variants.vcf
+
+Normalize:
+## Normalize all variant.vcf files
+	conda run -n biostars bcftools norm -f ${REF} variants.vcf
+	conda run -n biostars bcftools norm -f ${REF} variants1.vcf
+	conda run -n biostars bcftools norm -f ${REF} variants2.vcf
