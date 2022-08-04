@@ -65,5 +65,4 @@ Multi:
 	bwa mem -R ${TAG3} ${REF} ${R7} ${R8} | samtools sort > ${BAM3}
 	bwa mem -R ${TAG4} ${REF} ${R9} ${R10} | samtools sort > ${BAM4}
 ## Produce multisample vcf
-	conda run -n biostars bcftools mpileup -Ov -f ${REF}  *.bam > genotypes.vcf
-	conda run -n biostars bcftools call --ploidy 1 -vm -Ov |  conda run -n biostars bcftools norm -Ov -f ${REF} -d all > variants.vcf
+	conda run -n biostars bcftools mpileup -Ov -f ${REF} *bam | conda run -n biostars bcftools call --ploidy 1 -vm -Ov >  variants.vcf
