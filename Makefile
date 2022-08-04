@@ -23,6 +23,6 @@ Bcf:
 ## Index BAM file
 	samtools index ${BAM}
 ## Compute genotypes
-	conda run -n biostars bcftools mpileup -Ovu -f ${REF} ${BAM} > genotypes.vcf
+	conda run -n biostars bcftools mpileup -Ov -f ${REF} ${BAM} > genotypes.vcf
 ## Call variants
 	conda run -n biostars bcftools call -vc -Ov genotypes.vcf > observed-mutations.vcf
