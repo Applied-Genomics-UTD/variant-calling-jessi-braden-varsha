@@ -3,3 +3,8 @@
 /refs
 *bam*
 *fa*
+*.gz
+*.txt
+*.vcf
+*.log
+*.json
